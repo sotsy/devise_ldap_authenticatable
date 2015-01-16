@@ -1,6 +1,10 @@
 Devise LDAP Authenticatable
 ===========================
 
+[![Gem Version](https://badge.fury.io/rb/devise_ldap_authenticatable.png)](http://badge.fury.io/rb/devise_ldap_authenticatable)
+[![Code Climate](https://codeclimate.com/github/cschiewek/devise_ldap_authenticatable.png)](https://codeclimate.com/github/cschiewek/devise_ldap_authenticatable)
+[![Dependency Status](https://gemnasium.com/cschiewek/devise_ldap_authenticatable.png)](https://gemnasium.com/cschiewek/devise_ldap_authenticatable)
+
 Why fork for multiserver support?
 ---------------------------------
 
@@ -16,10 +20,6 @@ Example:
 Why this fork?
 --------------
 This fork changes a few lines to allow the admin binding to be set to the user trying to log in.
-
-[![Gem Version](https://badge.fury.io/rb/devise_ldap_authenticatable.png)](http://badge.fury.io/rb/devise_ldap_authenticatable)
-[![Code Climate](https://codeclimate.com/github/cschiewek/devise_ldap_authenticatable.png)](https://codeclimate.com/github/cschiewek/devise_ldap_authenticatable)
-[![Dependency Status](https://gemnasium.com/cschiewek/devise_ldap_authenticatable.png)](https://gemnasium.com/cschiewek/devise_ldap_authenticatable)
 
 Devise LDAP Authenticatable is a LDAP based authentication strategy for the [Devise](http://github.com/plataformatec/devise) authentication framework.
 
