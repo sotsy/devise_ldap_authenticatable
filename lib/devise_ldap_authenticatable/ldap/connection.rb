@@ -14,9 +14,27 @@ module Devise
         ldap_options[:encryption] = ldap_config["ssl"].to_sym if ldap_config["ssl"]
 
         @ldap = Net::LDAP.new(ldap_options)
-        @ldap.host = ldap_config["host"]
+
         @ldap.port = ldap_config["port"]
         @ldap.base = ldap_config["base"]
+
+        if ldap_config["host"].kind_of?(Array)
+          # servers = ldap_config["hosts"].split(',')
+          ldap_config["host"].each do |host|
+            begin
+              @ldap.host = host
+              @ldap.open do end
+            rescue Net::LDAP::LdapError
+              DeviseLdapAuthenticatable::Logger.send("Could not connect to #{@ldap.host}, trying next one")
+              next
+            else
+              break
+            end
+          end
+        else
+          @ldap.host = ldap_config["host"]
+        end
+
         @attribute = ldap_config["attribute"]
         @allow_unauthenticated_bind = ldap_config["allow_unauthenticated_bind"]
 
