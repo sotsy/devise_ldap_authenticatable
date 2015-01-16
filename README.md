@@ -1,6 +1,18 @@
 Devise LDAP Authenticatable
 ===========================
 
+Why fork for multiserver support?
+---------------------------------
+
+If you have multiple LDAP servers for failover you can set them all in an array. This ensures the usage of all available servers. To use this fork in your Rails application change the single host definition in 'ldap.yml' to an array of hosts.
+
+Example:
+
+```
+- host: 'host.example.com'
++ host: ['host1.example.com','host2.example.com']
+```
+
 Why this fork?
 --------------
 This fork changes a few lines to allow the admin binding to be set to the user trying to log in.
